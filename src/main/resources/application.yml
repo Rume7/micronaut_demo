@@ -1,17 +1,18 @@
-micronaut:
-  application:
-    name: micronaut_demo
-datasource's:
+datasources:
   default:
-    url: jdbc:mysql://localhost:3306/BlogDB
-    driverClassName: com.mysql.cj.jdbc.Driver
-    username: scott
-    password: tiger
-    db-type: mysql
-    schema-generate: CREATE_DROP
-    dialect: MYSQL
-jpa.default.properties.hibernate.hbm2ddl.auto: update
-netty:
-  default:
-    allocator:
-      max-order: 3
+    url: jdbc:h2:mem:devDb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: ""
+    dialect: H2
+
+  jpa:
+    default:
+      entity-scan:
+        packages:com.codehacks.model
+      properties:
+        hibernate:
+          hbm2ddl:
+            auto: update
+          show_sql: true
+          format_sql: true

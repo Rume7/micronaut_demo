@@ -1,9 +1,12 @@
 micronaut:
   application:
     name: micronaut_demo
-datasources:
+datasource's:
   default:
+    url: jdbc:mysql://localhost:3306/BlogDB
     driverClassName: com.mysql.cj.jdbc.Driver
+    username: scott
+    password: tiger
     db-type: mysql
     schema-generate: CREATE_DROP
     dialect: MYSQL
